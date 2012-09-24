@@ -1,0 +1,29 @@
+{
+	"manifest_version": 2,
+	"version": "1.2",
+	"name": "Ypander",
+	"description": "Expand comments, reply and upvote inline on Hackernews.",
+	"icons": { "16": "icon16.png",
+	           "48": "icon48.png",
+	          "128": "icon128.png" },
+	"browser_action": {
+		"default_icon": "icon16.png"
+	},
+	"permissions": [
+		"http://news.ycombinator.com/"
+	],
+	"content_scripts": [
+		{
+			"matches": [
+				"http://*.news.ycombinator.com/",
+				"http://*.news.ycombinator.com/news*",
+				"http://*.news.ycombinator.com/newest*",
+				"http://*.news.ycombinator.com/submitted*",
+				"http://*.news.ycombinator.com/submissions*",
+				"http://*.news.ycombinator.com/ask*",
+				"http://*.news.ycombinator.com/saved*"
+			],
+			"js": ["jquery.js","script.js"]
+		}
+	]
+}
